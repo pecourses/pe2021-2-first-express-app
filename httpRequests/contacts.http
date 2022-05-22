@@ -1,0 +1,2 @@
+# check getAll
+GET http://localhost:5000/contacts HTTP/1.1
