@@ -1,0 +1,5 @@
+### check get 
+GET http://localhost:5000/contests HTTP/1.1
+
+### check post 
+POST http://localhost:5000/contests HTTP/1.1
