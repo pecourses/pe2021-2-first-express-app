@@ -1,11 +1,7 @@
 module.exports.contactsController = require('./contactsController');
-module.exports.usersController = require('./usersController');
 
-// {
+// module.exports = {
 //   contactsController: {
 //     getContacts, createContact;
-//   }
-//   usersController: {
-//     getUsers, getUserById;
 //   }
 // }

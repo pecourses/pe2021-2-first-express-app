@@ -16,8 +16,7 @@ module.exports.getContactsById = (req, res) => {
   const foundContacts = Contacts.getContactById(id);
 
   if (foundContacts) {
-    res.status(200).send(foundContacts);
-    return;
+    return res.status(200).send(foundContacts);
   }
   res.status(404).send('Contacts Not Found');
 };

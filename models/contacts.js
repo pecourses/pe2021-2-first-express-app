@@ -1,5 +1,7 @@
 const { format } = require('date-fns');
 
+// для генерации id удобно использовать пакет https://www.npmjs.com/package/uuid
+
 const contactsDB = [
   {
     id: 0,
