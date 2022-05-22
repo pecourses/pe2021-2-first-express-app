@@ -10,3 +10,14 @@ module.exports.createContact = (req, res) => {
   const newContact = Contacts.createContact(body);
   res.status(201).send(newContact);
 };
+
+module.exports.getContactsById = (req, res) => {
+  const { id } = req.params;
+  const foundContacts = Contacts.getContactById(id);
+
+  if (foundContacts) {
+    res.status(200).send(foundContacts);
+    return;
+  }
+  res.status(404).send('Contacts Not Found');
+};

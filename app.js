@@ -16,4 +16,8 @@ app.use(express.json());
 app.get('/contacts', contactsController.getContacts);
 app.post('/contacts', contactsController.createContact);
 
+// параметры маршрута
+// 'GET http://127.0.0.1:5000/contacts/55'
+app.get('/contacts/:id', contactsController.getContactsById);
+
 module.exports = app;

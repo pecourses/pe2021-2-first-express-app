@@ -30,6 +30,11 @@ class ContactsDB {
     return [...this.contacts];
   }
 
+  getContactById (id) {
+    const foundIndex = this.contacts.findIndex(c => c.id === Number(id));
+    return foundIndex === -1 ? null : this.contacts[foundIndex];
+  }
+
   updateContact (id, values) {
     const foundContactIndex = this.contacts.findIndex(c => c.id === id);
     this.contacts[foundContactIndex] = {
