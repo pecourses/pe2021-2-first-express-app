@@ -3,6 +3,9 @@ const { format } = require('date-fns');
 
 const app = express();
 
+// втроенные middleware, чтобы спарсить body в объект
+app.use(express.json());
+
 app.get('/', (req, res) => {
   console.log('req', req);
   res.status(200).send();
@@ -80,6 +83,10 @@ app.get('/contacts', (req, res) => {
   res.status(200).send(contacts);
 });
 
-app.post('/contacts', (req, res) => {});
+app.post('/contacts', (req, res) => {
+  const { body } = req;
+  const newContact = contactsDbInstace.createContact(body);
+  res.status(201).send(newContact);
+});
 
 module.exports = app;
