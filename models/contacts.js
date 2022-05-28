@@ -52,8 +52,13 @@ class ContactsDB {
   }
 
   deleteContact(id) {
-    const foundContactIndex = this.contacts.findIndex((c) => c.id === id);
-    this.contacts.splice(foundContactIndex, 1);
+    const foundContactIndex = this.contacts.findIndex(
+      (c) => c.id === Number(id)
+    );
+
+    return foundContactIndex === -1
+      ? null
+      : this.contacts.splice(foundContactIndex, 1);
   }
 }
 

@@ -21,4 +21,7 @@ app.get("/contacts/:id", contactsController.getContactsById);
 
 app.patch("/contacts/:id", contactsController.updateContacts);
 
+// delete (по id), controller, edit model
+app.delete("/contacts/:id", contactsController.deleteContact);
+
 module.exports = app;

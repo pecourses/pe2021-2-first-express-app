@@ -37,3 +37,11 @@ Content-Type: application/json
 {
   "isFavourite": true
 }
+
+### check delete 204 -----------------------------------------
+
+DELETE http://127.0.0.1:5000/contacts/0 HTTP/1.1
+
+### check update 404 -----------------------------------------
+
+DELETE http://127.0.0.1:5000/contacts/10 HTTP/1.1

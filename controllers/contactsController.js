@@ -34,3 +34,12 @@ module.exports.updateContacts = (req, res) => {
   }
   res.status(404).send("Contact Not Found");
 };
+
+module.exports.deleteContact = (req, res) => {
+  const { id } = req.params;
+  const delContact = Contacts.deleteContact(id);
+  if (delContact) {
+    return res.status(204).send();
+  }
+  res.status(404).send("contact not found");
+};
