@@ -49,6 +49,15 @@ Content-Type: application/json
   "isFavourite": true
 }
 
+### check update 422 -----------------------------------------
+
+PATCH http://127.0.0.1:5000/contacts/0 HTTP/1.1
+Content-Type: application/json
+
+{
+  "isFavourite": "200"
+}
+
 ### check delete 204 -----------------------------------------
 
 DELETE http://127.0.0.1:5000/contacts/0 HTTP/1.1

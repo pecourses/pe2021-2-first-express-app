@@ -43,7 +43,11 @@ app.post(
 app.get("/contacts/:id", contactsController.getContactsById);
 
 // добавить валидацию на обновление
-app.patch("/contacts/:id", contactsController.updateContacts);
+app.patch(
+  "/contacts/:id",
+  validate.validateContactOnUpdate,
+  contactsController.updateContacts
+);
 
 // delete (по id), controller, edit model
 app.delete("/contacts/:id", contactsController.deleteContact);

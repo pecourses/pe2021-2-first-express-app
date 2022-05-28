@@ -7,6 +7,7 @@ module.exports.getContacts = (req, res) => {
 
 module.exports.createContact = (req, res) => {
   const { body } = req;
+
   const newContact = Contacts.createContact(body);
   res.status(201).send(newContact);
 };
