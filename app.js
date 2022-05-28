@@ -1,5 +1,5 @@
-const express = require('express');
-const { contactsController } = require('./controllers');
+const express = require("express");
+const { contactsController } = require("./controllers");
 
 const app = express();
 
@@ -12,11 +12,13 @@ app.use(express.json());
 // res.status() - задать статус-код ответа
 // res.send() - отправить ответ с вложениями
 
-app.get('/contacts', contactsController.getContacts);
-app.post('/contacts', contactsController.createContact);
+app.get("/contacts", contactsController.getContacts);
+app.post("/contacts", contactsController.createContact);
 
 // параметры маршрута
-// 'GET http://127.0.0.1:5000/contacts/55' => 55 попадет в req.params.is
-app.get('/contacts/:id', contactsController.getContactsById);
+// 'GET http://127.0.0.1:5000/contacts/55' => 55 попадет в req.params.id
+app.get("/contacts/:id", contactsController.getContactsById);
+
+app.patch("/contacts/:id", contactsController.updateContacts);
 
 module.exports = app;
