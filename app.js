@@ -1,6 +1,6 @@
 const express = require("express");
 const { contactsController } = require("./controllers");
-const { validate } = require("./middleware");
+const { validate, errorHandlers } = require("./middleware");
 
 const app = express();
 
@@ -51,5 +51,8 @@ app.patch(
 
 // delete (по id), controller, edit model
 app.delete("/contacts/:id", contactsController.deleteContact);
+
+// error handler
+app.use(errorHandlers.validationErrorHandler, errorHandlers.errorHandler);
 
 module.exports = app;
